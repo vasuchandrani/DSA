@@ -11,12 +11,14 @@ public class NQueenVisualization extends Frame {
     private int[][] board; 
     private Label messageLabel;
     private TextField inputField;
-    private Button startButton, pauseButton;
+    private final Button startButton;
+    private Button pauseButton;
     private boolean isPaused = false; 
 
     // stores all the solutions
     private List<int[][]> solutions; 
 
+    @SuppressWarnings("unused")
     public NQueenVisualization() {
 
         board = new int[4][4]; 
@@ -81,12 +83,14 @@ public class NQueenVisualization extends Frame {
         setVisible(true);
 
         addWindowListener(new WindowAdapter() {
+            @Override
             public void windowClosing(WindowEvent we) {
                 System.exit(0);
             }
         });
     }
     // ------
+    @Override
     public void paint(Graphics g) {
         int boardSize = N * CELL; 
         int xOffset = (SIDE - boardSize) / 2; 

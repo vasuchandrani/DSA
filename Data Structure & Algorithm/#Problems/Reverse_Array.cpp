@@ -3,11 +3,11 @@
 using namespace std;
 
 void reverse(vector<int> &v){
-    int s=0;
-    int e=v.size()-1;
+    int s = 0;
+    int e = v.size()-1;
     
-    while(s<=e){
-        swap(v[s],v[e]);
+    while(s <= e){
+        swap(v[s], v[e]);
         s++;
         e--;    
     }
