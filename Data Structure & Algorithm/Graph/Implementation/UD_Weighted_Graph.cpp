@@ -6,7 +6,7 @@ using namespace std;
 class graph {
 
     public:
-        unordered_map<int, list<pair<int,int>>> adjList;
+        unordered_map<int, vector<pair<int,int>>> adjList;
         void addEdges (int u, int v, int dist) { 
 
             pair<int, int> P1 = {v, dist};

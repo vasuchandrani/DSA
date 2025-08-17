@@ -1,0 +1,9 @@
+Graph Learning Flow
+
+Graph representation (Adj Matrix or List)
+
+    Traversal (DFS, BFS)
+
+        Topological Sorting(using DFS/BFS(Kahn's algo))
+
+            Cycle Detection(by BFS/DFS for UNdirected/Directed)

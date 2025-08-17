@@ -1,3 +1,5 @@
+// BFS and DFS for Graph 
+
 #include <bits/stdc++.h>
 using namespace std;
 class graph {
@@ -27,7 +29,7 @@ class graph {
             }
         }
 
-        void BFS(int s, unordered_map<int, bool> &visited, vector<int> &ans) {
+        void BFS(int s, vector<bool> &visited, vector<int> &ans) {
 
             queue<int> q;
             q.push(s);
@@ -48,7 +50,7 @@ class graph {
             }
         }
 
-        void DFS (int s, unordered_map<int, bool> &visited, vector<int> &ans) {
+        void DFS (int s, vector<bool> &visited, vector<int> &ans) {
 
             stack<int> st;
             st.push(s);
@@ -68,7 +70,6 @@ class graph {
                 }
             }
         }
-
 };
 
 
@@ -101,10 +102,10 @@ int main() {
     int src;    
     cin>>src;
     
-    unordered_map<int, bool> bfsVisited;
+    vector<bool> bfsVisited;
     vector<int> ansBFS;
-
     g.BFS(src,bfsVisited,ansBFS);
+
     cout<<"BFS Traversal"<<endl;
     for (int x : ansBFS) {
         cout<<x<<" ";
@@ -114,15 +115,14 @@ int main() {
     int s;    
     cin>>s;
     
-    unordered_map<int, bool> dfsVisited;
+    vector<bool> dfsVisited;
     vector<int> ansDFS;
-
     g.DFS(s,dfsVisited,ansDFS);
+    
     cout<<"DFS Traversal"<<endl;
     for (int x : ansDFS) {
         cout<<x<<" ";
     }cout<<endl;
-
 
     return 0;
 }
