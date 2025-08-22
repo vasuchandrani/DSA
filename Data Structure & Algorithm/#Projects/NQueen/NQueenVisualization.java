@@ -20,6 +20,7 @@ public class NQueenVisualization extends Frame {
     // stores all the solutions
     private List<int[][]> solutions; 
 
+    @SuppressWarnings("unused")
     public NQueenVisualization() {
 
         board = new int[4][4]; 
@@ -194,14 +195,11 @@ public class NQueenVisualization extends Frame {
             board = solution;
             repaint();
             try {
-                if (count == 1) {
-                    msgLabel.setText("Displaying " + count + "st solution...");
-                } else if (count == 2) {
-                    msgLabel.setText("Displaying " + count + "nd solution...");
-                } else if (count == 3) {
-                    msgLabel.setText("Displaying " + count + "rd solution...");
-                } else {
-                    msgLabel.setText("Displaying " + count + "th solution...");
+                switch (count) {
+                    case 1 -> msgLabel.setText("Displaying " + count + "st solution...");
+                    case 2 -> msgLabel.setText("Displaying " + count + "nd solution...");
+                    case 3 -> msgLabel.setText("Displaying " + count + "rd solution...");
+                    default -> msgLabel.setText("Displaying " + count + "th solution...");
                 }
                 Thread.sleep(3000); 
             } catch (InterruptedException e) {
@@ -216,7 +214,8 @@ public class NQueenVisualization extends Frame {
             msgLabel.setText("No solutions found for "+N+" Queens");
     }
 
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
-        new NQueenVisualization();
+        NQueenVisualization nq = new NQueenVisualization();
     }
 }
